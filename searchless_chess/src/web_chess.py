@@ -915,8 +915,10 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port)
 
-# cd searchless_chess/src
-# export PKG_CONFIG_PATH="/opt/homebrew/lib/pkgconfig"
-# export DYLD_LIBRARY_PATH="/opt/homebrew/lib:$DYLD_LIBRARY_PATH"
-# export PYTHONPATH=$(pwd)/../..
-# python web_chess.py
+'''
+cd searchless_chess/src
+export PKG_CONFIG_PATH="/opt/homebrew/lib/pkgconfig"
+export DYLD_LIBRARY_PATH="/opt/homebrew/lib:$DYLD_LIBRARY_PATH"
+export PYTHONPATH=$(pwd)/../..
+python web_chess.py
+'''
