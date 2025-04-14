@@ -281,7 +281,7 @@ def transformer_decoder(
   if config.apply_post_ln:
     h = layer_norm(h)
   logits = hk.Linear(config.output_size)(h)
-  return jnn.log_softmax(logits, axis=-1), attention_weights
+  return jnn.log_softmax(logits, axis=-1), attention_weights, h
 
 
 def build_transformer_predictor(

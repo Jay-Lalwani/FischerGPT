@@ -21,7 +21,7 @@ def visualize_attention(board, move, output_file="attention_heatmap.svg"):
     # Then we add 1 token for the action and 1 token for the dummy return => total 79.
     sequence = np.concatenate([tokenized_fen, action, dummy_r])[None, :]  # shape [1,79]
 
-    logits, attention_weights = engine.predict_fn(sequence)
+    logits, attention_weights, hidden_states = engine.predict_fn(sequence)
     # attention_weights is a list of shape [B, num_heads, T, T] for each layer
     # so each layer[i]: [1, num_heads, 79, 79]
 

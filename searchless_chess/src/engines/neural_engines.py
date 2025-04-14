@@ -87,7 +87,7 @@ class ActionValueEngine(NeuralEngine):
         [sequences, legal_actions, dummy_return_buckets],
         axis=1,
     )
-    logits, _ = self.predict_fn(sequences)  # Ignore attention weights in analyse
+    logits, _, _ = self.predict_fn(sequences)  # Ignore attention weights in analyse
     return {'log_probs': logits[:, -1], 'fen': board.fen()}
 
   def play(self, board: chess.Board) -> chess.Move:
@@ -132,14 +132,16 @@ def wrap_predict_fn(
     remainder = -len(sequences) % batch_size
     padded = np.pad(sequences, ((0, remainder), (0, 0)))
     sequences_split = np.split(padded, len(padded) // batch_size)
-    all_logits, all_attention = [], []
+    all_logits, all_attention, all_hidden = [], [], []
     for sub_sequences in sequences_split:
-      logits, attention = fixed_predict_fn(sub_sequences)
+      logits, attention, hidden = fixed_predict_fn(sub_sequences)
       all_logits.append(logits)
       all_attention.append(attention)
+      all_hidden.append(hidden)
     logits = np.concatenate(all_logits, axis=0)
     attention = [np.concatenate([a[i] for a in all_attention], axis=0) for i in range(len(all_attention[0]))]
-    return logits[:len(sequences)], [attn[:len(sequences)] for attn in attention]
+    hidden = np.concatenate(all_hidden, axis=0)
+    return logits[:len(sequences)], [attn[:len(sequences)] for attn in attention], hidden[:len(sequences)]
 
   return predict_fn
 

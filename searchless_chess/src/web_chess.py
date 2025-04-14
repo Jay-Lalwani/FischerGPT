@@ -171,7 +171,7 @@ def visualize_attention(move: chess.Move):
     sequence = np.concatenate([tokenized_fen, action, dummy_r])[None, :]  # shape [1,79]
 
     # 2) Inference
-    logits, attention_weights = engine.predict_fn(sequence)
+    logits, attention_weights, hidden_states = engine.predict_fn(sequence)
 
     # 3) Extract last-token-to-board-squares attention
     last_token_attention = [
@@ -916,9 +916,9 @@ if __name__ == "__main__":
     app.run(host="0.0.0.0", port=port)
 
 '''
+Before running:
 cd searchless_chess/src
 export PKG_CONFIG_PATH="/opt/homebrew/lib/pkgconfig"
 export DYLD_LIBRARY_PATH="/opt/homebrew/lib:$DYLD_LIBRARY_PATH"
 export PYTHONPATH=$(pwd)/../..
-python web_chess.py
 '''
