@@ -1,0 +1,96 @@
+Probing in_check.txt with 9M:
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.400
+Standard Deviation of Test Accuracy: 0.200
+Mean Test F1 Score: 0.267
+Standard Deviation of Test F1 Score: 0.327
+
+Probing in_check.txt with 270M:
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.400
+Standard Deviation of Test Accuracy: 0.200
+Mean Test F1 Score: 0.267
+Standard Deviation of Test F1 Score: 0.327
+
+Probing bishop_pair.txt with 9M:
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.400
+Standard Deviation of Test Accuracy: 0.374
+Mean Test F1 Score: 0.333
+Standard Deviation of Test F1 Score: 0.422
+
+Probing bishop_pair.txt with 270M:
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.500
+Standard Deviation of Test Accuracy: 0.316
+Mean Test F1 Score: 0.467
+Standard Deviation of Test F1 Score: 0.400
+
+Probing high_mobility.txt with 9M:
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.600
+Standard Deviation of Test Accuracy: 0.374
+Mean Test F1 Score: 0.533
+Standard Deviation of Test F1 Score: 0.452
+
+Probing high_mobility.txt with 270M:
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.600
+Standard Deviation of Test Accuracy: 0.374
+Mean Test F1 Score: 0.533
+Standard Deviation of Test F1 Score: 0.452
+
+Probing material_difference.txt with 9M:
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.600
+Standard Deviation of Test Accuracy: 0.200
+Mean Test F1 Score: 0.467
+Standard Deviation of Test F1 Score: 0.400
+
+Probing material_difference.txt with 270M:
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.800
+Standard Deviation of Test Accuracy: 0.245
+Mean Test F1 Score: 0.733
+Standard Deviation of Test F1 Score: 0.389
+
+Probing passed_pawn.txt with 9M:
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.600
+Standard Deviation of Test Accuracy: 0.200
+Mean Test F1 Score: 0.467
+Standard Deviation of Test F1 Score: 0.400
+
+Probing passed_pawn.txt with 270M:
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.800
+Standard Deviation of Test Accuracy: 0.245
+Mean Test F1 Score: 0.867
+Standard Deviation of Test F1 Score: 0.163
+
+Probing pinned_piece.txt with 9M:
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.000
+Standard Deviation of Test Accuracy: 0.000
+Mean Test F1 Score: 0.000
+Standard Deviation of Test F1 Score: 0.000
+
+Probing pinned_piece.txt with 270M:
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.600
+Standard Deviation of Test Accuracy: 0.374
+Mean Test F1 Score: 0.533
+Standard Deviation of Test F1 Score: 0.452
+

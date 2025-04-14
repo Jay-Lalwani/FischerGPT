@@ -70,13 +70,14 @@ def log_transform(X):
     return np.log1p(np.abs(X)) * np.sign(X)
 
 # 4. Main Probing Function
-def probe_concept(hidden_states, labels):
+def probe_concept(hidden_states, labels, output_file=None):
     """
     Probe the hidden states to detect a concept using a random forest classifier.
     
     Args:
         hidden_states (np.ndarray): Hidden states from the model.
         labels (np.ndarray): Binary labels indicating the presence of the concept.
+        output_file (file): File object to write results to.
     """
 
     # Replace NaNs and infinite values
@@ -98,32 +99,48 @@ def probe_concept(hidden_states, labels):
     results = cross_validate(pipeline, hidden_states, labels, cv=cv, scoring=scoring, return_train_score=True)
 
     # Report results
-    print("Cross-validated Results:")
-    print(f"Mean Train Accuracy: {np.mean(results['train_accuracy']):.3f}")
-    print(f"Mean Test Accuracy: {np.mean(results['test_accuracy']):.3f}")
-    print(f"Standard Deviation of Test Accuracy: {np.std(results['test_accuracy']):.3f}")
-    print(f"Mean Test F1 Score: {np.mean(results['test_f1']):.3f}")
-    print(f"Standard Deviation of Test F1 Score: {np.std(results['test_f1']):.3f}")
-    print()
+    result_str = "Cross-validated Results:\n"
+    result_str += f"Mean Train Accuracy: {np.mean(results['train_accuracy']):.3f}\n"
+    result_str += f"Mean Test Accuracy: {np.mean(results['test_accuracy']):.3f}\n"
+    result_str += f"Standard Deviation of Test Accuracy: {np.std(results['test_accuracy']):.3f}\n"
+    result_str += f"Mean Test F1 Score: {np.mean(results['test_f1']):.3f}\n"
+    result_str += f"Standard Deviation of Test F1 Score: {np.std(results['test_f1']):.3f}\n\n"
+    
+    if output_file:
+        output_file.write(result_str)
+    else:
+        print(result_str)
 
 # 5. Run the Probing Task
 if __name__ == "__main__":
+    # Create results directory if it doesn't exist
+    results_dir = "results"
+    if not os.path.exists(results_dir):
+        os.makedirs(results_dir)
+    
     # Load the model
     ENGINE_9M = engine_constants.ENGINE_BUILDERS['9M']()
     ENGINE_270M = engine_constants.ENGINE_BUILDERS['270M']()
 
     MAX_SAMPLES = 10
 
-    # Collect hidden states and labels
-    for label_file in ['in_check.txt', 'bishop_pair.txt', 'high_mobility.txt', 'material_difference.txt', 'passed_pawn.txt', 'pinned_piece.txt']:
-        hidden_states_9, labels_9 = collect_hidden_states(ENGINE_9M, f"label/{label_file}", max_samples=MAX_SAMPLES)
-        hidden_states_270, labels_270 = collect_hidden_states(ENGINE_270M, f"label/{label_file}", max_samples=MAX_SAMPLES)
+    # Open a file for writing results
+    timestamp = np.datetime64('now').astype(str).replace(':', '-').replace('.', '-')
+    results_file_path = os.path.join(results_dir, f"probe_results_{timestamp}.txt")
+    
+    with open(results_file_path, "w") as results_file:
+        # Collect hidden states and labels
+        for label_file in ['in_check.txt', 'bishop_pair.txt', 'high_mobility.txt', 'material_difference.txt', 'passed_pawn.txt', 'pinned_piece.txt']:
+            hidden_states_9, labels_9 = collect_hidden_states(ENGINE_9M, f"label/{label_file}", max_samples=MAX_SAMPLES)
+            hidden_states_270, labels_270 = collect_hidden_states(ENGINE_270M, f"label/{label_file}", max_samples=MAX_SAMPLES)
 
-        print(f"Probing {label_file} with 9M:")
-        probe_concept(hidden_states_9, labels_9)
+            results_file.write(f"Probing {label_file} with 9M:\n")
+            probe_concept(hidden_states_9, labels_9, results_file)
 
-        print(f"Probing {label_file} with 270M:")
-        probe_concept(hidden_states_270, labels_270)
+            results_file.write(f"Probing {label_file} with 270M:\n")
+            probe_concept(hidden_states_270, labels_270, results_file)
+    
+    print(f"Results written to {results_file_path}")
 
 '''
 Before running:
