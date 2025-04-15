@@ -122,7 +122,7 @@ if __name__ == "__main__":
     ENGINE_9M = engine_constants.ENGINE_BUILDERS['9M']()
     ENGINE_270M = engine_constants.ENGINE_BUILDERS['270M']()
 
-    MAX_SAMPLES = 10
+    MAX_SAMPLES = 1000
 
     # Open a file for writing results
     timestamp = np.datetime64('now').astype(str).replace(':', '-').replace('.', '-')
@@ -139,6 +139,8 @@ if __name__ == "__main__":
 
             results_file.write(f"Probing {label_file} with 270M:\n")
             probe_concept(hidden_states_270, labels_270, results_file)
+
+            print(f"Probing {label_file} with 9M and 270M complete")
     
     print(f"Results written to {results_file_path}")
 
