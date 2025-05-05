@@ -1,0 +1,144 @@
+Processing in_check.txt with 9M (Attention Distance):
+Average attention distance for 9M on in_check.txt: 4.5090
+Standard deviation of attention distance: 0.9555
+
+Probing in_check.txt with 9M (Hidden States):
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.300
+Standard Deviation of Test Accuracy: 0.245
+Mean Test F1 Score: 0.267
+Standard Deviation of Test F1 Score: 0.327
+
+Processing in_check.txt with 270M (Attention Distance):
+Average attention distance for 270M on in_check.txt: 4.3769
+Standard deviation of attention distance: 0.8458
+
+Probing in_check.txt with 270M (Hidden States):
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.100
+Standard Deviation of Test Accuracy: 0.200
+Mean Test F1 Score: 0.133
+Standard Deviation of Test F1 Score: 0.267
+
+Processing bishop_pair.txt with 9M (Attention Distance):
+Average attention distance for 9M on bishop_pair.txt: 3.6627
+Standard deviation of attention distance: 0.7469
+
+Probing bishop_pair.txt with 9M (Hidden States):
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.600
+Standard Deviation of Test Accuracy: 0.200
+Mean Test F1 Score: 0.467
+Standard Deviation of Test F1 Score: 0.400
+
+Processing bishop_pair.txt with 270M (Attention Distance):
+Average attention distance for 270M on bishop_pair.txt: 3.6777
+Standard deviation of attention distance: 0.6822
+
+Probing bishop_pair.txt with 270M (Hidden States):
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.500
+Standard Deviation of Test Accuracy: 0.447
+Mean Test F1 Score: 0.400
+Standard Deviation of Test F1 Score: 0.490
+
+Processing high_mobility.txt with 9M (Attention Distance):
+Average attention distance for 9M on high_mobility.txt: 4.1161
+Standard deviation of attention distance: 0.8059
+
+Probing high_mobility.txt with 9M (Hidden States):
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.700
+Standard Deviation of Test Accuracy: 0.400
+Mean Test F1 Score: 0.733
+Standard Deviation of Test F1 Score: 0.389
+
+Processing high_mobility.txt with 270M (Attention Distance):
+Average attention distance for 270M on high_mobility.txt: 4.0659
+Standard deviation of attention distance: 0.7681
+
+Probing high_mobility.txt with 270M (Hidden States):
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.400
+Standard Deviation of Test Accuracy: 0.200
+Mean Test F1 Score: 0.267
+Standard Deviation of Test F1 Score: 0.327
+
+Processing material_difference.txt with 9M (Attention Distance):
+Average attention distance for 9M on material_difference.txt: 4.0251
+Standard deviation of attention distance: 0.6446
+
+Probing material_difference.txt with 9M (Hidden States):
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.900
+Standard Deviation of Test Accuracy: 0.200
+Mean Test F1 Score: 0.800
+Standard Deviation of Test F1 Score: 0.400
+
+Processing material_difference.txt with 270M (Attention Distance):
+Average attention distance for 270M on material_difference.txt: 4.0514
+Standard deviation of attention distance: 0.9111
+
+Probing material_difference.txt with 270M (Hidden States):
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 1.000
+Standard Deviation of Test Accuracy: 0.000
+Mean Test F1 Score: 1.000
+Standard Deviation of Test F1 Score: 0.000
+
+Processing passed_pawn.txt with 9M (Attention Distance):
+Average attention distance for 9M on passed_pawn.txt: 3.7244
+Standard deviation of attention distance: 0.6929
+
+Probing passed_pawn.txt with 9M (Hidden States):
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.700
+Standard Deviation of Test Accuracy: 0.245
+Mean Test F1 Score: 0.533
+Standard Deviation of Test F1 Score: 0.452
+
+Processing passed_pawn.txt with 270M (Attention Distance):
+Average attention distance for 270M on passed_pawn.txt: 3.8462
+Standard deviation of attention distance: 0.9335
+
+Probing passed_pawn.txt with 270M (Hidden States):
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.600
+Standard Deviation of Test Accuracy: 0.200
+Mean Test F1 Score: 0.467
+Standard Deviation of Test F1 Score: 0.400
+
+Processing pinned_piece.txt with 9M (Attention Distance):
+Average attention distance for 9M on pinned_piece.txt: 3.6495
+Standard deviation of attention distance: 0.8630
+
+Probing pinned_piece.txt with 9M (Hidden States):
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.700
+Standard Deviation of Test Accuracy: 0.245
+Mean Test F1 Score: 0.667
+Standard Deviation of Test F1 Score: 0.365
+
+Processing pinned_piece.txt with 270M (Attention Distance):
+Average attention distance for 270M on pinned_piece.txt: 3.8448
+Standard deviation of attention distance: 0.7648
+
+Probing pinned_piece.txt with 270M (Hidden States):
+Cross-validated Results:
+Mean Train Accuracy: 1.000
+Mean Test Accuracy: 0.400
+Standard Deviation of Test Accuracy: 0.200
+Mean Test F1 Score: 0.133
+Standard Deviation of Test F1 Score: 0.267
+
