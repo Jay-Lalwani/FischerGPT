@@ -1,5 +1,7 @@
 # FischerGPT: Interpreting Google DeepMind's searchless_chess
 
+Read our [paper](https://github.com/Jay-Lalwani/FischerGPT/blob/main/FischerGPT.pdf)
+
 This repository contains code for an interpretability study of DeepMind's "Searchless Chess" model, a transformer-based chess engine capable of grandmaster-level play without traditional search. Our project analyzes the model's internal reasoning by extracting attention distributions and identifying chess-specific concepts encoded in neurons and attention heads. We implement attention heatmap visualizations, attention-weighted Euclidean distance metrics, and probing tasks using labeled datasets for features like king safety, material imbalance, and mobility. Our analysis reveals how smaller (9M-parameter) and larger (270M-parameter) models differ in their reasoning patterns and offers insights into concept learning in large-scale transformer models.
 
 # Amortized Planning with Large-Scale Transformers: A Case Study on Chess
